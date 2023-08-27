@@ -6,14 +6,15 @@
 # Secret file
 .env
 .env.production
-.firebaserc
-firebase.json
 
 # testing
 /coverage
 
 # production
 /build
+.firebaserc
+firebase.json
+.firebase
 
 npm-debug.log*
 yarn-debug.log*
