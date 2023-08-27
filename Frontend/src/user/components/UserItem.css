@@ -11,8 +11,8 @@
   height: 100%;
   text-decoration: none;
   padding: 1rem;
-  color: white;
-  background: #292929;
+  color: rgb(199, 67, 67);
+  background: #fdfeff;
 }
 
 .user-item a:hover,
@@ -34,7 +34,7 @@
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: normal;
-  color: #ffd900;
+  color: #190541;
 }
 
 .user-item:hover h2,
