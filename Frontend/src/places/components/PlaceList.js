@@ -8,12 +8,15 @@ const PlaceList = (props) => {
     return (
       <div className="place-list center">
         <Card>
-          <h2>No places found. Maybe create one?</h2>
-          <Button to="/places/new">Share Place</Button>
+          {!props.isLoggedUserPlaces && <h2>Not added any places yet. Comeback later!</h2>}
+          {props.isLoggedUserPlaces && <h2>No places found. Maybe create one?</h2>}
+          {props.isLoggedUserPlaces && <Button to="/places/new">Share Place</Button>}
         </Card>
       </div>
     );
   }
+
+  
 
   return (
     <ul className="place-list">

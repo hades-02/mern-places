@@ -1,12 +1,14 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 
 import PlaceList from "../components/PlaceList";
 import { useParams } from "react-router-dom";
 import useHttp from "../../shared/hooks/http-hook";
 import LoadingSpinner from "../../shared/components/UI/LoadingSpinner/LoadingSpinner";
 import ErrorModal from "../../shared/components/UI/ErrorModal/ErrorModal";
+import { AuthContext } from "../../shared/context/auth-context";
 
 const UserPlaces = () => {
+  const authCtx = useContext(AuthContext);
   const [loadedPlaces, setLoadedPlaces] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttp();
 
@@ -39,7 +41,7 @@ const UserPlaces = () => {
         </div>
       )}
       {!isLoading && loadedPlaces && (
-        <PlaceList items={loadedPlaces} onPlaceDelete={deletePlaceHandler} />
+        <PlaceList items={loadedPlaces} onPlaceDelete={deletePlaceHandler} isLoggedUserPlaces={authCtx.userId === userId}/>
       )}
     </Fragment>
   );
