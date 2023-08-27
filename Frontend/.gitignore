@@ -6,6 +6,8 @@
 # Secret file
 .env
 .env.production
+.firebaserc
+firebase.json
 
 # testing
 /coverage
