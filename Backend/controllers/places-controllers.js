@@ -111,7 +111,7 @@ const getPlacesByUserId = async (req, res, next) => {
     return next(error);
   }
 
-  if (!places || places.places.length === 0) {
+  if (!places) {
     const error = new HttpError(
       "Could not find places for provided user ID!",
       404
